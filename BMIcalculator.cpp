@@ -5,9 +5,8 @@
 #include <cctype> // lets me use toupper()
 
 using namespace std;
-void BMI(int height, int weight, float);
 
-double BMI(){
+void BMI(){
     using namespace std;
     float height;
     float weight;
@@ -39,7 +38,7 @@ double BMI(){
     else if ((bmi >= 18.5) && (bmi <= 24.9)){
         category = "normal";
     }
-    else if (bmi < 18.5){
+    else {
         category = "underweight";
     }
 
