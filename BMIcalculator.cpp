@@ -2,7 +2,7 @@
 // RAFAEL GUTIERREZ
 
 #include <iostream>
-#include <cctype> // lets me use toupper()
+
 
 using namespace std;
 
