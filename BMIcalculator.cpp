@@ -1,12 +1,9 @@
 
 // RAFAEL GUTIERREZ
-
 #include <iostream>
-
-
 using namespace std;
 
-void BMI(){
+int BMI(){
     using namespace std;
     float height;
     float weight;
@@ -28,7 +25,6 @@ void BMI(){
     cout << bmi;
     cout << endl;
 
-
     if (bmi >= 30){
         category = "obese";
     }
@@ -42,30 +38,34 @@ void BMI(){
         category = "underweight";
     }
 
-    cout << "Your BMI score is: " << bmi << " which means you are: " << category;
+    cout << "Your BMI score is: " << bmi << " which means you are: " << category << "\n";
 
+    return 0;
 }
-
-
 
 int main() {
 
     char answer;
-    cout << "Would you like your BMI calculated? (Answer Y for yes| N for no): ";
-    cin >> answer;
-    answer = toupper(answer);
-    // cout << answer;  // using this line to test "answer" variable.
+    int i = 0;
 
+    while ((i < 3) ) {
+        cout << "Would you like your BMI calculated? (Answer Y for yes| N for no): ";
+        cin >> answer;
+        answer = toupper(answer);
 
-    if (answer == 'Y') {
-        BMI();
+        if (answer == 'Y') {
+            BMI();
+            i = 3;
+        } else if (answer == 'N') {
+            cout << "No calculation requested, goodbye.";
+            i = 3;
+        } else {
+            cout << "Invalid choice. \n";
+            i = i + 1;
+            if (i == 3) {
+                cout<< "Number of invalid choices exceeded - Try again later.";
+            }
+        }
     }
-    else if (answer == 'N') {
-        cout << "Goodbye";
-    }
-    else {
-        cout << "invalid choice, goodbye. ";
-    }
-
     return 0;
 }
